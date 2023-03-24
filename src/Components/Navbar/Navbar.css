@@ -1,0 +1,59 @@
+.header {
+    font-family: sans-serif;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 100;
+    background-color: none;
+    color: white;
+    padding: 10px;
+  }
+  
+  nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+  }
+  
+  .logo {
+    width: 150px;
+    margin-left: 20px;
+  }
+  
+  .logo img {
+    max-width: 100%;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin-top: 5;
+    padding: 50;
+    display: flex;
+  }
+  
+  nav li {
+    margin: 0 10px;
+    padding: 10px;
+  }
+  
+  nav li a {
+    display: block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: larger;
+  }
+  
+  nav li a:hover {
+    background-color: none;
+    color: black;
+  }
+  
+  .signin_signup {
+    list-style-type: none;
+    margin-top: 5;
+    padding: 50;
+    display: flex;
+  }
