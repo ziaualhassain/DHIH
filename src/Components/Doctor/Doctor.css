@@ -1,0 +1,10 @@
+.doctor-body-container{
+    background-image: url('/src/Images/image.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+}

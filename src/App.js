@@ -4,6 +4,8 @@ import Navbar from './Components/Navbar/Navbar';
 import HomeComponent from './Components/Home/Home';
 import Footer from './Components/Footer/Footer';
 import Authentication from './Components/Authentication/Authentication';
+import PatientComponent from './Components/Patient/Patient';
+import DoctorComponent from './Components/Doctor/Doctor';
 
 function App() {
   return (
@@ -12,6 +14,8 @@ function App() {
       <Routes>
         <Route path="/" element={<HomeComponent />} />
         <Route path="/authentication" element={<Authentication />} />
+        <Route path="/doctor" element={<DoctorComponent />} />
+        <Route path="/patient" element={<PatientComponent />} />
       </Routes>
       <Footer />
     </Router>
