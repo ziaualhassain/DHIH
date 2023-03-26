@@ -1,7 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from 'react-router-dom';
+import { toast } from "react-toastify";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
 import "./Doctor.css";
+import PatientComponent from "../Patient/Patient";
 
 const doctorsList = [
   {  name: "Dr. John Smith", regNumber: "1234", regYear: "2020", smc: "Andhra Pradesh", ethAddress: "0x1234567890", isAccepted: null },
@@ -20,6 +23,7 @@ function DoctorComponent() {
   const [selectedFiles, setSelectedFiles] = useState([]);
   const Doctor_Address = "0x12345678901234......567890"; //Address of the doctor need to be retrive from the doctor unique id
   
+  const navigate = useNavigate();
 
   const [doctors, setDoctors] = useState(doctorsList);
 
@@ -74,7 +78,16 @@ const handleFileSelect = (event) => {
   console.log(`File names: ${Array.from(files).map(file => file.name)}`);
 };
 
-
+const showPopup = (type, address, callback) => {
+  // Show popup with request to patient with address
+  const message = `Doctor wants to ${type} your data. Do you accept?`;
+  if (window.confirm(message)) {
+    toast.success(`Request accepted by ${address}`);
+    callback();
+  } else {
+    toast.error(`Request denied by ${address}`);
+  }
+};
 
 // Code to handle reading patient data
 const handleReadPermission = () => {
@@ -82,14 +95,31 @@ const handleReadPermission = () => {
   const nftAddressRegex = /^0x[0-9a-fA-F]{64}$/; // Regular expression to validate NFT addresses
   if (!addressRegex.test(patientAddress) && !nftAddressRegex.test(patientAddress)) 
   {
-    alert('Please enter a valid Ethereum or NFT address!');
+    toast.error("Invalid address format");
     return;
   }
   else{
     //Handle for smartcontract read request
-    alert('read button clicked');
+    console.log('read button clicked');
+    // Make read request to patient with patientAddress
+    // Show popup and wait for response from patient
+    // If response is accepted, navigate to patient page
+    showPopup("read", patientAddress, navigateToPatientPage);
   }
 };
+
+
+//code to navigate to the patient address mentioned in the inbox
+const navigateToPatientPage = () => {
+    //navigate(`/Patient/${patientAddress}`);
+    console.log("Navigation Function");
+    navigate("/patient"); //for local verification i'm using this normal redirect through navigation
+  };
+
+const navigateToDataUpdationPage = () => {
+   console.log("Data updation called so it should be in the doctor page only");
+   navigate("/doctor");
+}
 
 
   // Code to handle writing patient data
@@ -98,12 +128,13 @@ const handleReadPermission = () => {
     const nftAddressRegex = /^0x[0-9a-fA-F]{64}$/; // Regular expression to validate NFT addresses
     if (!addressRegex.test(patientAddress) && !nftAddressRegex.test(patientAddress)) 
     {
-      alert('Please enter a valid Ethereum or NFT address!');
+      toast.error("Invalid address format");
        return;
     }
   else{
     //Handle for smartcontract updation
-    alert('write button button clicked');
+    console.log('write button button clicked');
+    showPopup("write", patientAddress, navigateToDataUpdationPage);
   }
   };
 
@@ -203,3 +234,4 @@ const handleReadPermission = () => {
 }
 
 export default DoctorComponent;
+

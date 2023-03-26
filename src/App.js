@@ -6,11 +6,14 @@ import Footer from './Components/Footer/Footer';
 import Authentication from './Components/Authentication/Authentication';
 import PatientComponent from './Components/Patient/Patient';
 import DoctorComponent from './Components/Doctor/Doctor';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <Router>
       <Navbar />
+       <ToastContainer /> {/*for showing popup on the doctoe page whether the request is sent or not */}
       <Routes>
         <Route path="/" element={<HomeComponent />} />
         <Route path="/authentication" element={<Authentication />} />
