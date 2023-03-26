@@ -1,5 +1,6 @@
 .doctor-body-container{
-    background-image: url('/src/Images/image.png');
+    overflow: hidden;
+    background-image: url('/src/Images/image.png'); 
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -8,3 +9,269 @@
     height: 100vh;
     color: white;
 }
+
+.approval-container {
+    flex-basis: 50%;
+    height: 100%;
+    overflow-y: auto;
+    padding: 10px;
+}
+
+.approval-header {
+    margin-left: 25px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 25px;
+  }
+
+  .approval-timeline{
+    margin-left: 50px;
+  }
+  
+  
+  /* STYLING THE SCROLLBAR OF THE PAGE :) */
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  /* Track */
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  /* Handle */
+  ::-webkit-scrollbar-thumb {
+    background: #D9D9D9;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-track-piece:end {
+    margin-bottom: 10px; 
+  }
+  
+  ::-webkit-scrollbar-track-piece:start {
+    margin-top: 10px;
+  }
+  
+  /* Mobile View Setting*/
+  @media only screen and (max-width: 767px) 
+  {
+    .profile-container, .doctor-container
+    {
+      flex-direction: column;
+    }  
+  }
+
+.profile-container {
+    margin-top: -40px;
+    overflow-y: auto;
+    flex-basis: 50%;
+    height: 100%;
+    padding: 10px;
+    flex: 1;
+    box-sizing: border-box;
+  }
+
+  .patient-address {
+    display: flex;
+    align-items: center;
+    margin-right: 20px;
+  }
+  
+  .profile-icon {
+    margin-top: 100px;
+    margin-left: 10px;
+    font-size: 5px;
+    margin-right: 10px;
+    display: inline-block;
+  }
+  
+  .address-text {
+    font-size: 16px;
+    margin-top: 8px;
+    font-weight: bold;
+  }
+  .doctor-container {
+    margin-left: 50px;
+    padding-top: 180px;
+    color:white;
+    display: flex;
+    height: 100%;
+    width: 100%;
+    flex:1;
+    box-sizing: border-box;
+    /* overflow-y: auto; */
+  }
+
+  .userdetails{
+    margin-top: -100px;
+    margin-left: 275px;
+  }
+
+  .request_form{
+    font-size: 1.1rem;
+    line-height: 1.5;
+    margin-left: -225px;
+    margin-bottom: 20px;
+    font-weight: italic;
+    padding: 10px;
+  }
+
+  .approved_addresses{
+    list-style: none;
+    padding: 20px;
+  }
+
+  li{
+    padding: 15px;
+  }
+
+  .button-container{
+    position: relative;
+  }
+  
+  .read-button, .write-button {
+    background-color: #D9D9D9;
+    border: none;
+    color: black;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin-left: 80px;
+    margin-bottom: 20px;
+  }
+
+  .address-input{
+    width: 50%;
+    margin-left: 100px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+  }
+
+  .update-data-input{
+  width: 50%;
+  margin-left: 100px;
+  border: 1px solid #ccc;
+  border-radius: 25px;
+  font-size: 16px;
+  box-sizing: border-box;
+  margin-bottom: 10px;
+  padding: 25px;
+}
+
+.input-class {
+    margin-top: 25px;
+    margin-left: 150px;
+    display: block;
+    width: 100%;
+    max-width: 200px;
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 5px;
+    font-size: 10px;
+    color: #555;
+    background-color: #fff;
+    box-shadow: none;
+    cursor: pointer;
+  }
+  
+  .input-class:hover {
+    border-color: #aaa;
+  }
+  
+  .input-class:focus {
+    outline: none;
+    border-color: #333;
+  }
+  
+  .input-class::-webkit-file-upload-button {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .input-class::-webkit-file-upload-button:hover {
+    background-color: #555;
+  }
+  
+  .input-class::-webkit-file-upload-button:focus {
+    outline: none;
+    background-color: #444;
+  }
+
+  .upadate-data-input{
+    width: 50%;
+    margin-left: 100px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 25px;
+  }
+  
+  .update-data-input-tittle{
+    width: 50%;
+    margin-left: 100px;
+    border: 1px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    padding: 10px;
+  }
+  
+  .update-patient-timeline{
+    font-size: 15px;
+    margin-left: 205px;
+    padding: 9px;
+    margin-top: 10px;
+    background-color: #4CAF50;
+    color: white;
+  }
+
+  .file-upload-container {
+    margin-top: 5px;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .file-upload-label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  
+  .file-upload-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 10px;
+  }
+  
+  .file-upload-item {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+  
+  .file-upload-icon {
+    margin-right: 10px;
+  }
+  
+  .file-upload-name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 200px;
+  }
+  
