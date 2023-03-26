@@ -120,3 +120,12 @@ form {
   #name-select{
     margin-left: -50px;
   }
+
+  #smc-select {
+      width: 110%;
+      margin-left: -25px;
+  }
+  
+  #smc-dropdown {
+    align-items: center;
+  }

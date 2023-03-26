@@ -7,8 +7,8 @@ import "./Doctor.css";
 import PatientComponent from "../Patient/Patient";
 
 const doctorsList = [
-  {  name: "Dr. John Smith", regNumber: "1234", regYear: "2020", smc: "Andhra Pradesh", ethAddress: "0x1234567890", isAccepted: null },
-  {  name: "Dr. Jane Doe", regNumber: "5678", regYear: "2019", smc: "Telangana", ethAddress: "0x0987654321", isAccepted: null },
+  {  name: "Dr. Varun", regNumber: "1234", regYear: "2020", smc: "Andhra Pradesh", ethAddress: "0x1234567890", isAccepted: null },
+  {  name: "Dr. Bali", regNumber: "5678", regYear: "2019", smc: "Telangana", ethAddress: "0x0987654321", isAccepted: null },
   {  name: "Dr. Michael Johnson", regNumber: "9012",regYear: "2022", smc: "Arunachal Pradesh", ethAddress: "0x6789012345", isAccepted: null },
   {  name: "Dr. John Smith", regNumber: "1234", regYear: "2020", smc: "Andhra Pradesh", ethAddress: "0x1234567890", isAccepted: null },
   {  name: "Dr. Jane Doe", regNumber: "5678", regYear: "2019", smc: "Telangana", ethAddress: "0x0987654321", isAccepted: null },

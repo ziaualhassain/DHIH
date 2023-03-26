@@ -69,7 +69,7 @@ function Authentication() {
         <div className="auth-container">
           <div className="toggle-btn-container">
             <button id="toggle-btn" onClick={toggleForm}>
-              {showLoginForm ? '! Patient Registration' : '! Doctor Registration'}
+              {showLoginForm ? '! User Registration Form' : '! Doctor Registration Form'}
             </button>
             {showLoginForm ? (
               <form onSubmit={handlePatientFormSubmit}>
@@ -91,7 +91,7 @@ function Authentication() {
                 </label>
                 <label>
                   Registration Number:
-                  <input type="number" name="registrationNumber" placeholder="Enter Your Registration Number" />
+                  <input type="number" name="registrationNumber" placeholder="Enter Your Reg Number" />
                 </label>
                 <label>
                   Registration Year:
@@ -100,7 +100,7 @@ function Authentication() {
                 <label>
                   State Medical Council:
                   <select name="smc" id="smc-select">
-                    <option value="">-- Select State Medical Council --</option>
+                    <option id="smc-dropdown">-- Select Your State Medical Council From Here--</option>
                         <option>Andhra Pradesh Medical Council</option>
                         <option>Arunachal Pradesh Medical Council</option>
                         <option>Assam Medical Council</option>
