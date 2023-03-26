@@ -27,8 +27,6 @@ function DoctorComponent() {
     }
   };
   
-
-
   //Checking the input update info and storing it 
   const handleUpdateInputChange = (event) => {
     const updateInfo = event.target.value;
@@ -67,8 +65,6 @@ const handleFileSelect = (event) => {
     alert('write button clicked');
   };
 
-
-
   //FUNCTION TO HANDLE THE UPDATION OF THE PATIENT DATA AND THE DETAILS OF THE UPDATION
   const handleUpdatePatientData = () => {
     console.log("The details of the updations are :");
@@ -78,6 +74,7 @@ const handleFileSelect = (event) => {
     console.log(`Patient Address: ${patientAddress}`);
   };
 
+  //LEFT SIDE CONTENT I.E APPROVAL
 
   return (
     <div className="doctor-body-container">
