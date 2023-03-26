@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 function HomeComponent() {
   return (
     <div className="container bg-image"> {/* add the CSS class to the root element */}
-      <div class="text-container">
+      <div className="text-container">
       <h1> Hear us out! </h1>
       <h3>"Health is wealth, and the right information is key to unlocking it."</h3>
       <p>We provide a secure & decentralised system to store and organise your health records!</p>

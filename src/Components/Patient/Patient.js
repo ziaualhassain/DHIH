@@ -73,12 +73,12 @@ function PatientComponent() {
 
   return (
     <div className="Patient-body-container">
-      <div class="patient-container">
+      <div className="patient-container">
 
         {/* Timeline of the patient medical history */}
         <div className="timeline-container">
-          <div class="timeline-header"> Timeline of Health Activites </div>
-          <div class="timeline">
+          <div className="timeline-header"> Timeline of Health Activites </div>
+          <div className="timeline">
             {timelineData.map((event, index) => (
               <div key={index} className="timeline-event">
                 <div className="timeline-event-date">{event.date}</div>

@@ -3,16 +3,16 @@ import './Navbar.css';
 
 function Navbar() {
   return (
-    <div class="header">
+    <div className="header">
             <nav>
-              <div class="logo">
+              <div className="logo">
                 <a href="/">L O G O</a>
               </div>
               <ul>
                 <li><a href="#">About</a></li>
                 <li><a href="#">Contract</a></li>
               </ul>
-              <div class="signin_signup">
+              <div className="signin_signup">
                  <li><a href="#">Sign In/Up</a></li>
               </div>
             </nav>
