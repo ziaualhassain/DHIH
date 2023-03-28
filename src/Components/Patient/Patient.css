@@ -107,6 +107,7 @@
   .address-text {
     font-size: 16px;
     margin-top: 8px;
+    margin-left: -20px;
     font-weight: bold;
   }
   .patient-container {

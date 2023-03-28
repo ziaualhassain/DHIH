@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import Switch from 'react-switch';
 import './Authentication.css';
 import { useNavigate } from 'react-router-dom';
 import DoctorComponent from '../Doctor/Doctor';
@@ -13,11 +14,13 @@ function validateAadharId(aadharId) {
 function Authentication() {
   const [showLoginForm, setShowLoginForm] = useState(true);
   const [isDoctor, setIsDoctor] = useState(false);
+  const [welcomeMessage, setWelcomeMessage] = useState('Welcome User');
   const [mintingStatus, setMintingStatus] = useState('');
   const navigate = useNavigate();
 
   const toggleForm = () => {
-    setShowLoginForm((prevState) => !prevState);
+    setShowLoginForm(!showLoginForm);
+    setWelcomeMessage(showLoginForm ? 'Welcome Doctor' : 'Welcome User');
     console.log('Toggled');
   };
 
@@ -66,11 +69,17 @@ function Authentication() {
       {isDoctor ? (
         <DoctorComponent />
       ) : (
-        <div className="auth-container">
-          <div className="toggle-btn-container">
-            <button id="toggle-btn" onClick={toggleForm}>
-              {showLoginForm ? '! User Registration Form' : '! Doctor Registration Form'}
-            </button>
+      <div className="auth-container">
+     <div style={{ position: 'fixed', top: '20%', left: '50%', transform: 'translate(-50%, -50%)'}} className="toggle-btn-container">
+     <h2 className="welcomeMessage"> {welcomeMessage} </h2>
+    <span className="Patient_Label">User</span>
+    <Switch
+      onChange={toggleForm} checked={!showLoginForm} onColor="#86d3ff" onHandleColor="#2693e6" handleDiameter={20} uncheckedIcon={false} checkedIcon={false} boxShadow="0px 1px 5px rgba(0, 0, 0, 0.6)"
+      activeBoxShadow="0px 0px 1px 10px rgba(0, 0, 0, 0.2)" height={20} width={48} className="react-switch"/>
+        <span className="Doctor_Label">Doctor</span>
+      </div>     
+            
+            <div className="Auth-Form">
             {showLoginForm ? (
               <form onSubmit={handlePatientFormSubmit}>
                 <label>
@@ -97,7 +106,7 @@ function Authentication() {
                   Registration Year:
                   <input type="date" name="registrationYear" placeholder="Enter Registaration Year"  max={new Date().toISOString().split('T')[0]} />
                 </label>
-                <label>
+                <label id="smc-dpd">
                   State Medical Council:
                   <select name="smc" id="smc-select">
                     <option id="smc-dropdown">-- Select Your State Medical Council From Here--</option>
@@ -151,8 +160,8 @@ function Authentication() {
                 <button type="submit">Doctor Mint!</button>
               </form>
             )}
+            </div>
           </div>
-        </div>
       )}
     </>
   );

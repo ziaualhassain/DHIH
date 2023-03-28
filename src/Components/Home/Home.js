@@ -1,9 +1,11 @@
 import React from 'react';
 import './Home.css'; 
 import { Link } from 'react-router-dom';
+import AboutProject from '../AboutProject/AboutProject';
 
 function HomeComponent() {
   return (
+    <div>
     <div className="container bg-image"> {/* add the CSS class to the root element */}
       <div className="text-container">
       <h1> Hear us out! </h1>
@@ -14,6 +16,8 @@ function HomeComponent() {
       </Link>
     </div>
     </div>
+    <AboutProject />
+   </div>
   );
 }
 

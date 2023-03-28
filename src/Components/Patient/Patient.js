@@ -8,7 +8,7 @@ function PatientComponent() {
 
   const patientAddress = "0x12345678901234......567890"; //Address of the patient
 
-  const authorizedAddress = 'patientAddress'; //making only the patient can access some key features such as toggling recent approvals
+  const authorizedAddress = patientAddress; //making only the patient can access some key features such as toggling recent approvals
 
   const recentApprovals = [
     "0x123456.......890abcdef12345678",

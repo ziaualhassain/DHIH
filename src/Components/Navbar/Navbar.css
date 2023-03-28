@@ -57,3 +57,21 @@
     padding: 50;
     display: flex;
   }
+
+  .logo-text {
+    font-weight: bold;
+    font-size: 24px;
+    color: #fff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0;
+  }
+  
+  .logo-text:hover {
+    color: #000;
+  }
+  
+  .logo a {
+    text-decoration: none;
+  }
+  
