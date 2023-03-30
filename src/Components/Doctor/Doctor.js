@@ -204,7 +204,7 @@ const navigateToDataUpdationPage = () => {
                 onChange={handleAddressInputChange}
               />
               <div className="button-container">
-                <button onClick={handleReadPermission} className="read-button"> Read Request </button>
+                {/* <button onClick={handleReadPermission} className="read-button"> Read Request </button> */}
                 <button onClick={handleWritePermission} className="write-button"> Write Request </button> <br></br>
                 <input type="text" className="update-data-input-tittle"  placeholder="Add a breif tittle!" value={patientTitleUpdateInfo} onChange={handleTittleUpdateInputChange} />
                 <input type="text" className="update-data-input" placeholder="Update with the details like medication etc..!" value={patientUpdateInfo} onChange={handleUpdateInputChange} />

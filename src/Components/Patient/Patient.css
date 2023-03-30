@@ -147,3 +147,59 @@
 .timeline-toggle-button{
    margin-bottom: 25px;
   }
+
+  .dropdown-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 200px;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    height: 200px;
+  }
+  
+  .dropdown-menu p {
+    margin: 0 0 -20px;
+    font-weight: bold;
+    text-align: center;
+    color: #000;
+    
+  }
+  
+  /* position: absolute;
+    top: 280px; /* adjust as needed */
+    /* right: 0;
+    width: 200px;
+    background-color: white;
+    border: 1px solid #ccc;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+    z-index: 1;
+    margin-right: 50px; */ */
+
+  .dropdown-menu button {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 5px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  
+  .accept-btn{
+    background-color: green;
+    color: white;
+  }
+  
+  .reject-btn {
+    background-color: red;
+    color: white;
+  }
+  

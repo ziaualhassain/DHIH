@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faUserCircle } from '@fortawesome/free-solid-svg-icons'
-import { toast } from "react-toastify";
 import "./Patient.css";
 
 function PatientComponent() {
@@ -13,12 +12,6 @@ function PatientComponent() {
   const recentApprovals = [
     "0x123456.......890abcdef12345678",
     "0xabcdef........99567890abcdef12",
-    "0x7890ab........kef1234567890abcd",
-    "0x12345n........56890abcdef123458",
-    "0x123456.......890abcdef12345678",
-    "0xabcdef........99567890abcdef12",
-    "0x7890ab........kef1234567890abcd",
-    "0x12345n........56890abcdef1234578",
   ];
 
   const timelineData = [
@@ -31,7 +24,7 @@ function PatientComponent() {
       date: "January 2022",
       title: "Annual Physical Exam",
       description: "Routine checkup with primary care physician",
-    },
+    },    
     {
       date: "January 2022",
       title: "Annual Physical Exam",
@@ -41,7 +34,7 @@ function PatientComponent() {
       date: "January 2022",
       title: "Annual Physical Exam",
       description: "Routine checkup with primary care physician",
-    },
+    }, 
     {
       date: "January 2022",
       title: "Annual Physical Exam",
@@ -51,30 +44,33 @@ function PatientComponent() {
       date: "January 2022",
       title: "Annual Physical Exam",
       description: "Routine checkup with primary care physician",
-    },
+    }, 
     {
       date: "January 2022",
       title: "Annual Physical Exam",
       description: "Routine checkup with primary care physician",
     },
-    
+    {
+      date: "January 2022",
+      title: "Annual Physical Exam",
+      description: "Routine checkup with primary care physician",
+    }, 
   ];
+  
+  const [showDropdown, setShowDropdown] = useState(false); //state to manage the dropdown visibility
+  const [selectedAddress, setSelectedAddress] = useState(""); //state to store the selected address
 
-  //To enable that only the authorised users can access these buttons we need to  check the patient is acutally the owner of th
-  const [showAllData, setShowAllData] = useState(false); //to rescrit the access of timeline
-  const toggleShowAllData = () => {
-    setShowAllData(!showAllData);
+  //function to handle the click event of an address in the recent approvals list
+  const handleAddressClick = (address) => {
+    setShowDropdown(true); //show the dropdown menu
+    setSelectedAddress(address); //store the selected address in state
   };
 
-
-  const [showRecentApprovals, setShowRecentApprovals] = useState(false); // to restrcit the access of recent approvals
-  const toggleShowRecentApprovals = () => {
-    if (patientAddress === authorizedAddress) {
-      setShowRecentApprovals(!showRecentApprovals);
-    }
-    else{
-      toast(`you are not authorised to access it only ${patientAddress} has the previlige`);
-    }
+  //function to handle the click event of an option in the dropdown menu
+  const handleOptionClick = (option) => {
+    console.log(`Option selected: ${option}`); //replace with the logic to accept or reject the address
+    setShowDropdown(false); //hide the dropdown menu
+    setSelectedAddress(""); //clear the selected address from state
   };
 
 
@@ -86,21 +82,8 @@ function PatientComponent() {
         <div className="timeline-container">
           <div className="timeline-header"> Timeline of Health Activities </div>
           <div className="timeline">
-
-
-            {/* Button to toggle showing authorized content */}
-             <div className="timeline-toggle-button">
-                <button onClick={toggleShowAllData}>
-                {showAllData ? "Hide TimeLine" : "Show TimeLine"}
-            </button>
-              </div> 
-
-
             {timelineData.map((event, index) => (
               <div key={index} className="timeline-event">
-
-                 {showAllData || event.showOnlyToPatient ? ( 
-
                   <div className="timeline-event">
                     <div className="timeline-event-date">{event.date}</div>
                     <div className="timeline-event-details">
@@ -115,9 +98,6 @@ function PatientComponent() {
                       <hr className="timeline-event-separator" />
                     )}
                   </div>
-
-                 ) : null} 
-
               </div>
             ))}
           </div>
@@ -131,23 +111,31 @@ function PatientComponent() {
               <div className="profile-icon">
                 <FontAwesomeIcon icon={faUserCircle} size="5x" />
               </div>
-               {/* Toggle for recent approvals */}
-          <div className="toggle-button">
-            <button onClick={toggleShowRecentApprovals}>
-              {showRecentApprovals ? "Hide Recent Approvals" : "Show Recent Approvals"}
-            </button>
-          </div>
-
-            {showRecentApprovals && (
+  
+            
             <div className="recent-approvals">
-              <p>Recent Approvals:</p>
+              <p>Recent Requests:</p>
               <ul className="approved_addresses">
                 {recentApprovals.map((address, index) => (
-                  <li key={index}>{address}</li>
+                  <li
+                    key={index}
+                    onClick={() => handleAddressClick(address)} //call the handleAddressClick function when an address is clicked
+                  >
+                    {address}
+                  </li>
                 ))}
               </ul>
+              {showDropdown && ( //display the dropdown menu only if showDropdown is true
+                <div className="dropdown-menu">
+                  <p>Permission Awaiting</p>
+                  <ul>
+                    <button className="accept-btn" onClick={() => handleOptionClick("Accept")}>Accept</button>
+                    <button className="reject-btn"  onClick={() => handleOptionClick("Reject")}>Reject</button>
+                  </ul>
+                </div>
+              )}
             </div>
-          )}
+
             </div>
           </div>       
         </div>
