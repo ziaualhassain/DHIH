@@ -1,3 +1,5 @@
+Here is the pdf file which consists of detailed analysis of our work : https://drive.google.com/file/d/1fHHQuWP5htWCFfrSFf9JYIpItVwHkSJm/view?usp=sharing
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
